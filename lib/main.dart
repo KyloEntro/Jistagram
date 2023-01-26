@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'Components/CustomCircularAvatar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,34 +66,73 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
-          centerTitle: true,
-          leading: IconButton(
-            icon: const Icon(
-              Icons.camera_alt_outlined,
-            ),
-            onPressed: () {},
-          ),
+          centerTitle: false,
+          titleSpacing: 20,
           title: const Text(
-            "JIstagram",
+            "Jistagram",
             style: TextStyle(fontFamily: "GrandHotel", fontSize: 35),
           ),
           actions: [
             IconButton(
+              icon: const Icon(
+                Icons.add_box_outlined,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
               onPressed: () {},
               icon: const Icon(
-                Icons.live_tv_rounded,
+                CupertinoIcons.heart,
               ),
             ),
             IconButton(
               onPressed: () {},
               icon: const Icon(
-                Icons.send_rounded,
+                CupertinoIcons.paperplane,
               ),
             )
           ],
         ),
         body: Container(
           color: Colors.black,
+          child: ListView(
+            children: [
+              Container(
+                height: 120,
+                width: double.infinity,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 0),
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                      CustomCircularAvatar(),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 500,
+                color: Colors.blue,
+              ),
+              Container(
+                width: double.infinity,
+                height: 500,
+                color: Colors.purple,
+              ),
+            ],
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           showSelectedLabels: false,
