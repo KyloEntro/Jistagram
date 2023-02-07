@@ -9,6 +9,7 @@ class ContentViewer extends StatefulWidget {
 
 class _ContentViewerState extends State<ContentViewer> {
   bool liked = false;
+  int likeCounter = 140;
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +65,11 @@ class _ContentViewerState extends State<ContentViewer> {
                   onPressed: () {
                     setState(() {
                       liked = !liked;
+                      if (liked) {
+                        likeCounter += 1;
+                      } else {
+                        likeCounter -= 1;
+                      }
                     });
                   },
                   padding: EdgeInsets.zero,
@@ -113,7 +119,7 @@ class _ContentViewerState extends State<ContentViewer> {
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              "142 j'aime",
+              "$likeCounter j'aime",
               textAlign: TextAlign.left,
               style: TextStyle(
                   color: Colors.white,
