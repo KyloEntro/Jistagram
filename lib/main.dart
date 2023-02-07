@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'Components/profiles_list_view.dart';
+import 'Components/content_viewer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -80,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Colors.black,
           child: ListView(
             children: [
-              Container(
+              SizedBox(
                 height: 120,
                 width: double.infinity,
                 child: Padding(
@@ -88,16 +89,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: ProfilesListView(),
                 ),
               ),
-              Container(
-                width: double.infinity,
-                height: 500,
-                color: Colors.black,
-              ),
-              Container(
-                width: double.infinity,
-                height: 500,
-                color: Colors.black,
-              ),
+              ContentViewer(),
+              ContentViewer(),
+              ContentViewer(),
+              ContentViewer(),
             ],
           ),
         ),

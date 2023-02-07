@@ -45,9 +45,11 @@ class Avatar extends StatelessWidget {
       height: 75,
       child: Padding(
         padding: const EdgeInsets.all(4.0),
-        child: CircleAvatar(
-          radius: 20,
-          backgroundImage: AssetImage(fileName),
+        child: Center(
+          child: CircleAvatar(
+            radius: 50,
+            backgroundImage: AssetImage(fileName),
+          ),
         ),
       ),
     );
